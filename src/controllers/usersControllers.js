@@ -17,7 +17,7 @@ const getUsersById = (req, res) => {
       if (users[0] != null) {
         res.json(users[0]);
       } else {
-        res.status(404).json({message: 'prout'})
+        res.status(404).json({message: 'Yapa'})
       }
     })
     .catch((err) => {
@@ -64,6 +64,25 @@ const getUsersById = (req, res) => {
       res.sendStatus(500);
     });
   }
+
+  const deleteUsersById = (req, res) => {
+    const id = parseInt(req.params.id);
+
+    database
+    .query(" delete from users where id = ?", [id])
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.sendStatus(404)
+      } else {
+        res.sendStatus(204)
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+  };
+
   
 
 module.exports = {
@@ -71,4 +90,5 @@ module.exports = {
     getUsersById,
     postUsers,
     updateUsers,
+    deleteUsersById
   };
