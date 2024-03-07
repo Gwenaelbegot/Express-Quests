@@ -27,3 +27,18 @@ describe("GET /api/movies/:id", () => {
     expect(response.status).toEqual(404);
   });
 });
+// describe("DELETE /api/movies/:id", () => {
+//   it("should return one movie", async () => {
+//     const response = await request(app).delete("/api/movies/1");
+
+//     expect(response.headers["content-type"]).toMatch(/json/);
+
+//     expect(response.status).toEqual(204);
+//   });
+
+//   it("should return no movie", async () => {
+//     const response = await request(app).delete("/api/movies/0");
+
+//     expect(response.status).toEqual(404);
+//   });
+// });

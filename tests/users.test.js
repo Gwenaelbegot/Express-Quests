@@ -31,3 +31,18 @@ describe("GET /api/users/:id", () => {
     expect(response.status).toEqual(404);
   });
 });
+// describe("DELETE /api/users/:id", () => {
+//   it("should return one user", async () => {
+//     const response = await request(app).delete("/api/users/1");
+
+//    expect(response.headers["content-type"]).toBeDefined();
+
+//     expect(response.status).toEqual(204);
+//   });
+
+//   it("should return no user", async () => {
+//     const response = await request(app).delete("/api/users/0");
+
+//     expect(response.status).toEqual(404);
+//   });
+// });
